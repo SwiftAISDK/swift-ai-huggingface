@@ -1,0 +1,18 @@
+{
+  "schemaVersion": 1,
+  "packages": [
+    {
+      "name": "@ai-sdk/huggingface",
+      "reviewedVersion": "2.0.78",
+      "ledgerKind": "provider",
+      "evidence": "`AIProviders.huggingFace`, `HuggingFaceProvider`, `HuggingFaceResponsesLanguageModel`, `HuggingFaceProviderTests.swift`",
+      "reviewStatus": "imported-reviewed-with-gaps",
+      "archiveIntegrity": "sha512-QJbvgGCmD4udVAkPF52QGjIPY94QdGUkCOY8SFxHHhoHBA6be0l7YccuigBgGoWOWGlsKQ2+G3fAtY6I5NbNvA==",
+      "sourceRef": "npm:@ai-sdk/huggingface@2.0.78",
+      "testRef": "682e2dd71456f14f9da33a1b983d1998c3a1184c",
+      "testRefRelationship": "inventory-snapshot-not-release-verified",
+      "contractFamilies": [],
+      "contractReview": "not-imported; inspect upstream declarations before extraction"
+    }
+  ]
+}
