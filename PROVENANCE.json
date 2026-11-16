@@ -1,44 +1,44 @@
 {
   "schemaVersion": 1,
   "package": "swift-ai-huggingface",
-  "version": "1.1.0",
-  "releaseID": "weekly-upstream-20261101",
+  "version": "1.2.0",
+  "releaseID": "upstream-parity-20261116",
   "source": {
-    "commit": "ea057797494ab9bb66df8c6bfd8edc10245b20e7",
-    "baseCommit": "ea057797494ab9bb66df8c6bfd8edc10245b20e7",
+    "commit": "1c457dea36be42376a6853aecd5c48ffc4942178",
+    "baseCommit": "1c457dea36be42376a6853aecd5c48ffc4942178",
     "workingTree": false,
-    "inputsSHA256": "b46f3e07b0a583d6fee81035987d74a06fc5c6109cbdf228144d1172d2c3676e"
+    "inputsSHA256": "d7b8f52add7828d7e9ed20418fe072e7db03e75483a168bb7f5c34e9d2a04a13"
   },
   "dependencies": [
     {
       "package": "swift-ai-core",
-      "from": "1.2.0"
+      "from": "1.6.0"
     }
   ],
   "changes": [
     {
-      "id": "weekly-upstream-20261101",
-      "notes": "Add native async throwing apiKeyProvider; resolve a fresh key immediately before every authenticated HTTP send/stream through the shared transport. Preserve static keys, custom header precedence, error/abort propagation, request builders and response parsers. TypeScript Resolvable/promise/function declarations map to an optional Sendable async closure. No other portable wire/runtime change was found in the published delta. Reviewed upstream: @ai-sdk/huggingface 2.0.78 to 2.0.82. Validation passed: node Scripts/test-packages.mjs (all 52 owning package suites and the compatibility facade); node Scripts/sdk.mjs generate --check; node --test Scripts/tests/*.test.cjs (27 passed); docs-site check and build (100 pages). Live provider calls were not run.",
-      "compatibility": "Minor release for additive native API; existing static settings and call sites remain compatible. Updated direct dependency minimums are recorded in the manifest. Existing documented JS/framework and native product gaps remain; version-delta review does not imply full parity or live-service testing. Explicit custom authentication skips an unused credential supplier, a deliberate native callback-order adaptation."
+      "id": "upstream-parity-20261116",
+      "notes": "Responses requests match upstream conversion.",
+      "compatibility": "Source-compatible; changes are additive. Request bodies, results, warnings and errors change to match the reviewed upstream package."
     }
   ],
   "canonicalDirectory": "Packages/swift-ai-huggingface",
   "upstream": [
     {
       "name": "@ai-sdk/huggingface",
-      "reviewedVersion": "2.0.82",
+      "reviewedVersion": "2.0.93",
       "ledgerKind": "provider",
-      "evidence": "`AIProviders.huggingFace`, `HuggingFaceProvider`, `HuggingFaceResponsesLanguageModel`, `HuggingFaceProviderTests.swift`; 2026-11-01 delta: Docs/WeeklyUpstreamAudit20261101.json",
+      "evidence": "`AIProviders.huggingFace`, `HuggingFaceProvider`, `HuggingFaceResponsesLanguageModel`, `HuggingFaceProviderTests.swift`; 2026-11-01 delta: Docs/Archive/WeeklyUpstreamAudit20261101.json; 2026-11-08 delta: Docs/Archive/WeeklyUpstreamAudit20261108.json; 2026-11-14 delta: Docs/Archive/WeeklyUpstreamAudit20261114.json; 2026-11-15 delta: Docs/Archive/WeeklyUpstreamAudit20261115.json",
       "reviewStatus": "imported-reviewed-with-gaps",
-      "archiveIntegrity": "sha512-Rhc2e+NY+5QWvQQBSX0q7CgofyZEAJRK8MPTy6PbL3i1z6oSR0Oqha9hpktqinNtSeS6Y8+PVSPgFgcEVbyWCQ==",
-      "sourceRef": "npm:@ai-sdk/huggingface@2.0.82",
-      "testRef": "9b603d36186b75e58d5479445a96c76f6e2d2700",
+      "archiveIntegrity": "sha512-p2fhBGPTsglawa2GCYgZ8C7D+TjNpbQpq/0VtG7ZGjolhCRFViPhBEd8sCrFEw9HGlTFGqaxNMNiGLessB/ykQ==",
+      "sourceRef": "npm:@ai-sdk/huggingface@2.0.93",
+      "testRef": "0e8e0543aeda7d4dd4ce6eade0d5b7d5a43644c1",
       "testRefRelationship": "matching-release",
       "contractFamilies": [
         "LanguageModelV4",
         "ProviderV4"
       ],
-      "contractReview": "2026-11-01: published declarations, source and exact matching-release changed tests reviewed; scoped dispositions and Swift translations are in Docs/WeeklyUpstreamAudit20261101.json. Existing broader product gaps remain; reviewed delta is not full-package parity."
+      "contractReview": "2026-11-15: published source/declarations and exact matching-release tests reviewed separately. Native delta scenarios, per-file dispositions, unchanged-catalog evidence and explicit remaining gaps are recorded in Docs/Archive/WeeklyUpstreamAudit20261115.json. Required checks remain a separate gate; no full-package/live-service parity claim."
     }
   ],
   "note": "Independent port. Imported test refs and contract review gaps retain their original status; export is not new upstream parity proof.",
@@ -57,15 +57,15 @@
     },
     {
       "canonicalPath": "Packages/swift-ai-huggingface/Porting/map.json",
-      "sha256": "8b985a8ad6b513946ad192da3f34396f5842b7248d15d77182d14e6e727037d9"
+      "sha256": "5e458f7dbee1b1b1497ae03070ed5af2b2914b626e24e581de02156f24496453"
     },
     {
       "canonicalPath": "Packages/swift-ai-huggingface/README.md",
-      "sha256": "cc81ba6345f17bea948664f98e86692ee98d669263f4a1ea4392d2c77f6fccb9"
+      "sha256": "ea9c64a823fc2a946bfdf2db76320584ae7fda1d96cf9182511eaeed929a9daa"
     },
     {
       "canonicalPath": "Packages/swift-ai-huggingface/Sources/SwiftAIHuggingFace/HuggingFaceModels.swift",
-      "sha256": "637af7ff5d6e2282862d1948dcb3dd4e8fb248eb5b24b2a5bf10b937fbb3d84c"
+      "sha256": "106ccd8f82db8c9ab5dcaaa8bd8fcf1c82e31f6ff0b2233916a5837a80844d1d"
     },
     {
       "canonicalPath": "Packages/swift-ai-huggingface/Sources/SwiftAIHuggingFace/HuggingFaceProvider.swift",
@@ -81,7 +81,11 @@
     },
     {
       "canonicalPath": "Packages/swift-ai-huggingface/Tests/SwiftAIHuggingFaceTests/HuggingFaceProviderTests.swift",
-      "sha256": "57fb029c7f80d27415c5cb072b4c7401ec9dd1df09431026d4686093ada58826"
+      "sha256": "04a46abd1f42416348dfcd169b7aa0d905370954ed61df8825b91d7d7a9a3526"
+    },
+    {
+      "canonicalPath": "Packages/swift-ai-huggingface/Tests/SwiftAIHuggingFaceTests/HuggingFaceResponsesUpstreamParityTests.swift",
+      "sha256": "bbb34fcc93e035b8af12487eba6e97b01a31c624c6ad0deadcc78eb8351ef029"
     },
     {
       "canonicalPath": "Packages/swift-ai-huggingface/Tests/SwiftAIHuggingFaceTests/TestSupport.swift",

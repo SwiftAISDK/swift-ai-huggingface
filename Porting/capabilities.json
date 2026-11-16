@@ -2,6 +2,7 @@
   {
     "order": 31,
     "providerID": "huggingface",
+    "displayName": "Hugging Face",
     "upstreamPackage": "@ai-sdk/huggingface",
     "factoryNames": [
       "AIProviders.huggingFace"
@@ -11,6 +12,12 @@
     ],
     "files": false,
     "skills": false,
-    "notes": "Hugging Face Responses language models mirror upstream Hugging Face 2.0.82: `HUGGINGFACE_API_KEY`, custom base URL and headers, versioned user-agent suffix, callable/language/responses aliases, `/v1/responses` request builder, providerOptions.huggingface metadata/instructions/strictJsonSchema/reasoningEffort schema, structured text formats, function tools/tool choice, reasoning and MCP/tool-call parsing, streaming lifecycle and metadata, image URL/data file parts including top-level `image` and `image/*` MIME resolution, explicit provider-reference file rejection, and unsupported embedding/image families. Streamed provider failures preserve normalized type, code, status, retryability, and raw metadata. ProviderV4 type names, ESM-only packaging, Node 22 engines, default export rename to `huggingFace`, optional JS headers config, TypeScript option export split, and workflow serialization helpers are JS-only upstream concerns. The 2026-10-25 pass: Responses toolChoice none retains definitions for facade enforcement; missing completion signals report interrupted. The 2026-11-01 reviewed delta adds native per-request async credentials and current portable request/stream fixes where applicable; see WeeklyUpstreamAudit20261101 for exact package dispositions and retained gaps."
+    "credentials": [
+      {
+        "env": "HUGGINGFACE_API_KEY",
+        "description": "Hugging Face access token, sent as a bearer token. Required unless passed in settings."
+      }
+    ],
+    "notes": "Open models through the Hugging Face inference router's Responses API, with function tools, reasoning, structured output and image input. Only language models are available."
   }
 ]
